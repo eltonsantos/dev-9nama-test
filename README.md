@@ -1,25 +1,13 @@
-# README
+# Dev 9Nama Test
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Commands
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+- rails new dev-9nama-test
+- rails g model Customer name:index
+- rails g model Supplier name:index address:index
+- rails g model Product description:index price:decimal{8-2}:index
+- rails g scaffold Orders
+- rails g model Item order:references product:references supplier:references customer:references quantity:integer
+- rails db:create
+- rails db:migrate
+- rails s
