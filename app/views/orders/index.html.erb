@@ -1,24 +1,42 @@
-<h1>Orders Management</h1>
+<h1 class="text-center text-5xl font-semibold text-blue-500">Orders Management</h1>
 
 <%= render "dropzone" %>
 
-<div id="orders-wrapper" >
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Order</th>
-        <th>Date</th>
-        <th>Amount</th>
-        <th>Details</th>
-      <tr>
-    <thead>
-    <tbody>
-      <%= render @orders %>
-      <% if @orders.empty? %>
+<div class="-my-2 py-2 overflow-x-auto">             
+  <div class="align-middle inline-block min-w-full shadow overflow-hidden bg-white shadow-dashboard px-8 pt-3 rounded-bl-lg rounded-br-lg">
+    <table class="min-w-full">
+      <thead>
         <tr>
-          <td>No files uploaded.</td>
+          <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">Order</th>
+          <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">Date</th>
+          <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">Amount</th>
+          <th class="px-6 py-3 border-b-2 border-gray-300"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-<div>
+      </thead>
+      <tbody class="bg-white">
+        <% @orders.each do |order| %>
+          <tr>
+            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+              <div class="text-sm leading-5 text-blue-900">Order #<%= order.id %></div>
+            </td>
+            <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+              <%= order.created_at.strftime('%m/%d/%Y') %>
+            </td>
+            <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+              <%= number_to_currency(order.total, :unit => "R$ ", :separator => ",", :delimiter => ".") %>
+            </td>
+            <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
+              <%= link_to "View", order_path(order), class: "px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none" %>
+            </td>
+          </tr>
+        <% end %>
+
+        <% if @orders.empty? %>
+          <tr>
+            <td>No files uploaded.</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

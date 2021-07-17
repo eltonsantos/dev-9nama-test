@@ -1,11 +1,13 @@
-<div>
-    <%= form_with url: orders_path(format: :html), remote: true, local: false, class: "dropzone", id: "my-awesome-dropzone" do |form| %>
-    <% end %>
-</div>
+<section class="h-full overflow-auto p-8 w-full h-full flex flex-col">
+    <header class="border-dashed border-2 border-gray-400 py-12 flex flex-col justify-center items-center">
+      <%= form_with url: orders_path(format: :html), remote: true, local: false, class: "dropzone mt-2 rounded-sm px-3 py-1 bg-gray-200 hover:bg-gray-300 focus:shadow-outline focus:outline-none", id: "my-awesome-dropzone" do |form| %>
+      <% end %>
+    </header>
+</section>
 
 <script>  
   Dropzone.options.myAwesomeDropzone = {
-    paramName: "file", // The name that will be used to transfer the file
+    paramName: "file",
     dictDefaultMessage: "Click or drag to upload files",
     dictFileTooBig: "Very large file. Limit: 20mb",
     maxFilesize: 20, // MB
