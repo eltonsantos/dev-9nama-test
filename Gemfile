@@ -27,11 +27,11 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-#Install dropzonejs
+# Used gems
 gem 'dropzonejs-rails'
-#use the interactor pattern
-gem "interactor", "~> 3.0"
+gem "interactor"
 gem 'jquery-rails'
+gem 'toastr-rails'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
