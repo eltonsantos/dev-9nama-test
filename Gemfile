@@ -29,6 +29,9 @@ gem 'jbuilder', '~> 2.5'
 
 #Install dropzonejs
 gem 'dropzonejs-rails'
+#use the interactor pattern
+gem "interactor", "~> 3.0"
+gem 'jquery-rails'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

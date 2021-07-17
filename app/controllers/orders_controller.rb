@@ -1,17 +1,21 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: %i[ show ]
 
   # GET /orders or /orders.json
   def index
-    @orders = Order.all
+    @orders = Order.all.order(id: :desc)
   end
 
   # GET /orders/1 or /orders/1.json
   def show
+    @order = Order.includes(:items).find(params[:id])
   end
 
-  # POST /orders or /orders.json
   def create
-    
+    order_file = params[:file]
+    result = ParseOrderFile.call(file: order_file, locale: :pt)
+    @order = result.order 
+    respond_to do |format|
+      format.js
+    end
   end
 end
