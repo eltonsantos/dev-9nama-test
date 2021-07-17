@@ -1,5 +1,5 @@
 <div>
-    <%= form_with url: orders_path(format: :js), remote: true, local: false, class: "dropzone", id: "my-awesome-dropzone" do |form| %>
+    <%= form_with url: orders_path(format: :html), remote: true, local: false, class: "dropzone", id: "my-awesome-dropzone" do |form| %>
     <% end %>
 </div>
 
@@ -9,6 +9,8 @@
     dictDefaultMessage: "Click or drag to upload files",
     dictFileTooBig: "Very large file. Limit: 20mb",
     maxFilesize: 20, // MB
-    success: response => eval(response.xhr.response)
+    success: function(data, response) {
+      alert("Uploaded with success!");
+    }
   };
 </script>

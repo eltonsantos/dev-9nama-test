@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
     result = ParseOrderFile.call(file: order_file, locale: :pt)
     @order = result.order 
     respond_to do |format|
-      format.js
+      format.html { redirect_to orders_url }
     end
   end
 end
