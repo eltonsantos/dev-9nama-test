@@ -1,6 +1,6 @@
 # Dev 9Nama Test
 
-## Commands
+## Used Commands
 
 - rails new dev-9nama-test
 - rails g model Customer name:index
