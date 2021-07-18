@@ -1,5 +1,5 @@
 <h1 align="center">
-  Dev 9Nama Test
+  Dev Nama Test
 </h1>
 
 <p align="center">
@@ -11,7 +11,7 @@
 </p>
 
 <h1 align="center">
-  <img alt="9Nama Test" title="9Nama Test" src=".github/orders.png" />
+  <img alt="Nama Test" title="Nama Test" src=".github/orders.png" />
 </h1>
 
 ---
@@ -34,7 +34,7 @@ This project use **ruby 2.7.0** and **rails 5.2.6**. I recommend installing [RVM
 Clone the project and access the folder
 
 ```bash
-$ git clone https://github.com/eltonsantos/dev-9nama-test.git && cd dev-9nama-test
+$ git clone https://github.com/eltonsantos/dev-nama-test.git && cd dev-nama-test
 ```
 
 Follow the steps below
@@ -87,7 +87,7 @@ $ rails s
 
 ## 💻 Project
 
-This project was developed for testing in the company 9Nama, in the July 17, 2021. The project consists of receiving a csv or txt file, processing the file and adding it to the sqlite database. Also, be able to show order details as well as the order total.
+This project was developed for testing in the company Nama, in the July 17, 2021. The project consists of receiving a csv or txt file, processing the file and adding it to the sqlite database. Also, be able to show order details as well as the order total.
 
 
 ## 🔖 Layout
@@ -103,7 +103,7 @@ The layout was created from scratch using the **TailWindCSS** framework.
 - [ ] Implementar o skeleton loader para quando tiver muitos pedidos 🔼
 - [ ] Ajustar alguns detalhes para o Layout ficar bem responsivo e fofo 🥰
 - [ ] Login e senha para poder acessar os pedidos 🔐
-- [ ] Adicionar testes para não ficar desesperado quando o projeto crescer
+- [ ] Adicionar testes para não ficar desesperado quando o projeto crescer 🔎
 - [ ] E muito mais... ❤💪🏼
 
 ---
