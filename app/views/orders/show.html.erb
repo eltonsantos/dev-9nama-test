@@ -1,38 +1,43 @@
-<div class="container">
-    <h1>Pedido #<%= @order.id %></h1>
-    <div>
-        <table class="table shadow">
-            <thead>
-                <tr>
-                    <th>Customer</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Address</th>
-                    <th>Supplier</th>
-                <tr>
-            <thead>
-            <tbody>
-                <% @order.items.each do |item| %>
-                    <tr>
-                        <td><%= item.customer.name %></td>
-                        <td><%= item.product.description %></td>
-                        <td><%= number_to_currency(item.product.price, :unit => "R$ ", :separator => ",", :delimiter => ".") %></td>
-                        <td><%= item.quantity %></td>
-                        <td><%= item.supplier.address %></td>
-                        <td><%= item.supplier.name %></td>
-                    </tr>
-                <% end %>
-                <tr>
-                <td></td>
-                <td><strong>Total: </strong></td>
-                <td><%= number_to_currency(@order.total, :unit => "R$ ", :separator => ",", :delimiter => ".") %></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <tr>
-            </tbody>
-        </table>
-        <%= link_to "Voltar", orders_path, class: "btn btn-info" %>
-    <div>
+<h1 class="text-center text-5xl font-semibold text-blue-500">Pedido #<%= @order.id %></h1>
+
+<div class="align-middle inline-block min-w-full shadow overflow-hidden bg-white shadow-dashboard px-8 pt-3 rounded-bl-lg rounded-br-lg">
+  <table class="min-w-full text-center table-auto">
+      <thead>
+          <tr>
+              <th>Customer</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Address</th>
+              <th>Supplier</th>
+          <tr>
+      <thead>
+    <tbody>
+      <% @order.items.each do |item| %>
+        <tr>
+          <td><%= item.customer.name %></td>
+          <td><%= item.product.description %></td>
+          <td><%= number_to_currency(item.product.price, :unit => "R$ ", :separator => ",", :delimiter => ".") %></td>
+          <td><%= item.quantity %></td>
+          <td><%= item.supplier.address %></td>
+          <td><%= item.supplier.name %></td>
+        </tr>
+      <% end %>
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><strong>Total: </strong></td>
+          <td class="text-red-500 font-semibold text-2xl">
+            <%= number_to_currency(@order.total, :unit => "R$ ", :separator => ",", :delimiter => ".") %>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+    </tbody>
+  </table>
 </div>
+
+<%= link_to "Voltar", orders_path, class: "border border-indigo-500 bg-indigo-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-indigo-600 focus:outline-none focus:shadow-outline flex flex-col justify-center items-center" %>
