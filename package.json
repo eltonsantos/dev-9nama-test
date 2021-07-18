@@ -1,5 +1,5 @@
 {
-  "name": "dev-9nama-test",
+  "name": "dev-nama-test",
   "private": true,
   "dependencies": {
     "toastr": "^2.1.4"
